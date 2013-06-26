@@ -29,7 +29,7 @@ void sudoku::llenarsudoku(){
     }
 }
 
-int Sudoku::verificarHorizontal(int matriz[9][9], int x, int y){
+int sudoku::verificarHorizontal(int matriz[9][9], int x, int y){
     int numero= matriz[x][y];
     int temp;
     for(int i=0;i<9;i++){
@@ -46,7 +46,7 @@ int Sudoku::verificarHorizontal(int matriz[9][9], int x, int y){
 
 
 
-int Sudoku::verificarVertical(int matriz[9][9], int x, int y){
+int sudoku::verificarVertical(int matriz[9][9], int x, int y){
     int numero= matriz[x][y];
     int temp;
     for(int i=0;i<9;i++){
@@ -62,7 +62,7 @@ int Sudoku::verificarVertical(int matriz[9][9], int x, int y){
 
 
 
-int Sudoku::verificarRecuadro(int matriz[9][9], int x, int y){
+int sudoku::verificarRecuadro(int matriz[9][9], int x, int y){
     int numero=matriz[x][y];
     int posX=3*(x/3);
     int posY=3*(y/3);
@@ -80,7 +80,7 @@ int Sudoku::verificarRecuadro(int matriz[9][9], int x, int y){
 
 
 
-int Sudoku::verificarSudoku(int matriz[9][9]){
+int sudoku::verificarSudoku(int matriz[9][9]){
     int numero;
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
@@ -94,4 +94,29 @@ int Sudoku::verificarSudoku(int matriz[9][9]){
         }
     }
     return 0;
+}
+
+void sudoku::on_validar_clicked()
+{
+    int matriz [9][9];
+    int k=0;
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            matriz[i][j]= cuadros[k]->text().toInt();
+            k++;
+
+
+        }
+
+
+    }
+    if (verificarSudoku(matriz)==0){
+        ui->validar->setText("Esta correcto");
+
+
+    }else{
+         ui->validar->setText("Esta incorrecto");
+
+    }
+
 }

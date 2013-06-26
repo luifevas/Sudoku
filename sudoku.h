@@ -23,6 +23,9 @@ public:
     int verificarVertical(int matriz[9][9], int x, int y);
     int verificarRecuadro(int matriz[9][9], int x, int y);
     int verificarSudoku(int matriz[9][9]);
+private slots:
+    void on_validar_clicked();
+
 private:
     Ui::sudoku *ui;
     QLineEdit *cuadros[81];
