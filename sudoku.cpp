@@ -1,5 +1,7 @@
 #include "sudoku.h"
 #include "ui_sudoku.h"
+#include "QFile"
+#include "string"
 
 sudoku::sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -118,5 +120,55 @@ void sudoku::on_validar_clicked()
          ui->validar->setText("Esta incorrecto");
 
     }
+
+}
+
+void sudoku:: guardarPartida(){
+    int k=0;
+
+    QFile file ("guardar.txt");
+   file.open(QIODevice::WriteOnly);
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+
+            QDataStream out(&file);
+            out <<cuadros[k]->text();
+            k++;
+        }
+        QDataStream out(&file);
+        out << "\n";
+}
+
+    file.close();
+
+}
+/*
+void sudoku:: cargarPartida(){
+
+    QFile file ("guardar.txt"),
+    file.open(QIODevide::ReadOnly);
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            QTextStream in(&file);
+            while (in.readline != "\n") {
+                QString line = in.readLine();
+                process_line(line);
+
+            }
+
+
+        }
+
+
+
+
+
+}
+}
+*/
+void sudoku::on_pushButton_clicked()
+{
+
+    guardarPartida();
 
 }
