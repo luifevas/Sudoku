@@ -32,6 +32,8 @@ public:
     int esPosible(int posibilidad, int matriz[9][9], int posX, int posY);
     QList<int> reiniciar(int matriz[9][9], int posX, int posY);
     QList<int> listaDePosibilidades(int matriz[9][9], int posX, int posY);
+    void copiarMatriz(int matriz[9][9], int matrizCopia[9][9]);
+    void colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPistas);
     void guardarPartida();
 private slots:
     void on_validar_clicked();

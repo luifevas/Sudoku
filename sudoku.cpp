@@ -20,7 +20,7 @@ void sudoku::llenarsudoku(){
     QTime time = QTime::currentTime();
     qsrand (time.msec());
     int a=0,k=0,numero=0,size=0,pos=0,x=0,y=0,posibilidadesSize=0;
-    int matriz[9][9];
+    int matriz[9][9],matrizSudoku[9][9];
     QList<int> removidoX;
 
 
@@ -73,14 +73,19 @@ void sudoku::llenarsudoku(){
 
             }
         }
+
+        // Se llena una matriz de ceros con pista para ser resuelto
+        colocarPistas(matriz,matrizSudoku,4);
+
         k=0;
         for(int i=0 ; i<9; i++){
             for(int j=0; j<9;j++){
-                numero=matriz[i][j];
+                numero=matrizSudoku[i][j];
                 cuadros[k]->setText(QString::number(numero));
                 k++;
             }
         }
+        sacarCeros();
 }
 
 
@@ -100,11 +105,11 @@ void sudoku:: sacarCeros(){
     for(int i=0 ; i<9; i++){
 
         for(int j=0; j<9;j++){
-            if((cuadros[i][k].text().toInt())==0){
-                cuadros[i][k].setText("");
+            if((cuadros[k]->text().toInt())==0){
+                cuadros[k]->setText("");
 
             }
-
+            k++;
         }
     }
 }
@@ -245,6 +250,50 @@ QList<int> sudoku::listaDePosibilidades(int matriz[9][9], int posX, int posY){
             posibilidad.append(i);
     }
     return posibilidad;
+}
+
+
+// Proporciona una copia de la matriz
+
+void sudoku:: copiarMatriz(int matriz[9][9], int matrizCopia[9][9]){
+    int i=0,j=0;
+    llenarCeros(matrizCopia);
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            matrizCopia[i][j]=matriz[i][j];
+        }
+    }
+}
+
+// Se colocan las Pista segun el nivel de dificultad elegido
+
+void sudoku:: colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPistas){
+    copiarMatriz(matriz,matrizSudoku);
+    int i=0,j=0,x=0,y=0,cont=0;
+    QTime time = QTime::currentTime();
+    qsrand (time.msec());
+    int random;
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            while(cont<=numPistas){
+                for(x=0;x<9;x++){
+                    for(y=0;y<9;y++){
+                        if(cont<=numPistas){
+                            if(i==(x/3) && j==(y/3)){
+                                random = qrand()%2;
+                                //vaciar=rnd.nextInt(2);
+                                if (random==1){
+                                    matrizSudoku[x][y]=0;
+                                    cont++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            cont=0;
+        }
+    }
 }
 
 
