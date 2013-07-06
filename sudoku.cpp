@@ -3,6 +3,7 @@
 #include "QFile"
 #include "string"
 #include <QTime>
+#include <QTextStream>
 
 sudoku::sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -330,12 +331,12 @@ void sudoku:: guardarPartida(){
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
 
-            QDataStream out(&file);
+             QTextStream out(&file);
             out <<cuadros[k]->text();
             k++;
         }
-        QDataStream out(&file);
-        out << "\n";
+         QTextStream out(&file);
+            out << "\n";
 }
 
     file.close();
