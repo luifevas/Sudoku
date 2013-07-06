@@ -21,7 +21,7 @@ void sudoku::llenarsudoku(){
     QTime time = QTime::currentTime();
     qsrand (time.msec());
     int a=0,k=0,numero=0,size=0,pos=0,x=0,y=0,posibilidadesSize=0;
-    int matriz[9][9],matrizSudoku[9][9];
+
     QList<int> removidoX;
 
 
@@ -379,6 +379,36 @@ void sudoku:: obtenerMatriz(int matriz[9][9]){
 
             }
             matriz[i][j]=cuadros[k]->text().toInt();
+            k++;
+        }
+    }
+}
+
+void pistaJugador(){
+    int matrizTemp[9][9],i,j,k=0;
+    QList<int> posX,posY;
+    QTime time = QTime::currentTime();
+    qsrand (time.msec());
+    int random;
+    posX.clear();
+    posY.clear();
+    llenarCeros(matrizTemp);
+    obtenerMatriz(matrizTemp);
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(matrizTemp[i][j]==0){
+                posX.append(i);
+                posY.append(j);
+            }
+        }
+    }
+    random = qrand()%(posX.size());
+
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            if(i==posX.at(random) && j==posY.at(random)){
+                cuadros[k]->setText(QString::number(matriz[i][j]));
+            }
             k++;
         }
     }

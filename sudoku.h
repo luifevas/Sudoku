@@ -22,6 +22,7 @@ public:
     ~sudoku();
     QList<int> listPosX;
     QList<int> listPosY;
+    int matriz[9][9],matrizSudoku[9][9];
     void llenarsudoku();
     int verificarHorizontal(int matriz[9][9], int x, int y);
     int verificarVertical(int matriz[9][9], int x, int y);
