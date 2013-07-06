@@ -20,11 +20,18 @@ class sudoku : public QMainWindow
 public:
     explicit sudoku(QWidget *parent = 0);    
     ~sudoku();
+    QList<int> listPosX;
+    QList<int> listPosY;
     void llenarsudoku();
     int verificarHorizontal(int matriz[9][9], int x, int y);
     int verificarVertical(int matriz[9][9], int x, int y);
     int verificarRecuadro(int matriz[9][9], int x, int y);
     int verificarSudoku(int matriz[9][9]);
+    void sacarCeros();
+    void llenarCeros(int matriz[9][9]);
+    int esPosible(int posibilidad, int matriz[9][9], int posX, int posY);
+    QList<int> reiniciar(int matriz[9][9], int posX, int posY);
+    QList<int> listaDePosibilidades(int matriz[9][9], int posX, int posY);
     void guardarPartida();
 private slots:
     void on_validar_clicked();
@@ -34,6 +41,7 @@ private slots:
 private:
     Ui::sudoku *ui;
     QLineEdit *cuadros[81];
+    QList<int> posibilidades;
     QFile guardar;
 };
 
