@@ -324,22 +324,26 @@ void sudoku::on_validar_clicked()
 }
 
 void sudoku:: guardarPartida(){
-    int k=0;
+
+    int matriz[9][9];
+    llenarCeros(matriz);
+    obtenerMatriz(matriz);
 
     QFile file ("guardar.txt");
-   file.open(QIODevice::WriteOnly);
+    file.open(QIODevice::WriteOnly);
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
 
              QTextStream out(&file);
-            out <<cuadros[k]->text();
-            k++;
+             out <<QString::number(matriz[i][j]);
+
         }
          QTextStream out(&file);
             out << "\n";
 }
 
     file.close();
+
 
 }
 /*
@@ -366,6 +370,20 @@ void sudoku:: cargarPartida(){
 }
 }
 */
+void sudoku:: obtenerMatriz(int matriz[9][9]){
+    int k=0;
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            if(cuadros[k]->text()==NULL){
+                matriz[i][j]=0;
+
+            }
+            matriz[i][j]=cuadros[k]->text().toInt();
+            k++;
+        }
+    }
+}
+
 void sudoku::on_pushButton_clicked()
 {
 

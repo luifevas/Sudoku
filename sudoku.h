@@ -35,6 +35,7 @@ public:
     void copiarMatriz(int matriz[9][9], int matrizCopia[9][9]);
     void colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPistas);
     void guardarPartida();
+    void obtenerMatriz(int matriz[9][9]);
 private slots:
     void on_validar_clicked();
 
