@@ -57,6 +57,10 @@ private slots:
 
     void on_cargar_clicked();
 
+    void on_invalido_toggled(bool checked);
+
+    void on_incorrecto_toggled(bool checked);
+
 private:
     Ui::sudoku *ui;
     QLineEdit *cuadros[81];

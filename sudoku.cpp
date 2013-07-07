@@ -6,6 +6,8 @@
 #include <QTextStream>
 #include <iostream>
 #include <QStringList>
+#include <QPalette>
+
 
 sudoku::sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -524,7 +526,7 @@ void sudoku:: pistaJugador(){
 }
 
 void sudoku:: jugadasInvalidas(){
-    int i,j;
+    int i,j,k=0;
     int matrizTemp[9][9];
     llenarCeros(matrizTemp);
     obtenerMatriz(matrizTemp);
@@ -533,20 +535,26 @@ void sudoku:: jugadasInvalidas(){
             if(matrizTemp[i][j]<10 && matrizTemp[i][j]>0){
                 if(verificarHorizontal(matrizTemp,i,j)==1 || verificarVertical(matrizTemp,i,j)==1 || verificarRecuadro(matrizTemp,i,j)==1){
                     //cambio de la casilla en la ventana
-                    QString str = "hola";
-                      std::cout << str.toStdString() << std::endl;
+                    QPalette *palette = new QPalette();
+                     palette->setColor(QPalette::Base,Qt::red);
+                     cuadros[k]->setPalette(*palette);
+
+
                 }
             }else{
-                //cambio de la casilla en la ventana
-                QString str = "hola";
-                  std::cout << str.toStdString() << std::endl;
+                QPalette *palette = new QPalette();
+                 palette->setColor(QPalette::Base,Qt::red);
+                 cuadros[k]->setPalette(*palette);
+
+
             }
+            k++;
         }
     }
 }
 
 void sudoku:: jugadasIncorrectas(){
-    int i,j;
+    int i,j,k=0;
     int matrizTemp[9][9];
     llenarCeros(matrizTemp);
     obtenerMatriz(matrizTemp);
@@ -554,15 +562,16 @@ void sudoku:: jugadasIncorrectas(){
         for(j=0;j<9;j++){
             if(matrizTemp[i][j]<10 && matrizTemp[i][j]>0){
                 if(matriz[i][j]!=matrizTemp[i][j]){
-                    //cambio de la casilla en la ventana
-                    QString str = "hola";
-                      std::cout << str.toStdString() << std::endl;
+                    QPalette *palette = new QPalette();
+                     palette->setColor(QPalette::Base,Qt::red);
+                     cuadros[k]->setPalette(*palette);
                 }
             }else{
-                //cambio de la casilla en la ventana
-                QString str = "hola";
-                  std::cout << str.toStdString() << std::endl;
+                QPalette *palette = new QPalette();
+                 palette->setColor(QPalette::Base,Qt::red);
+                 cuadros[k]->setPalette(*palette);
             }
+            k++;
         }
     }
 }
@@ -688,3 +697,42 @@ void sudoku::on_cargar_clicked()
 
 }
 
+
+void sudoku::on_invalido_toggled(bool checked)
+{
+    if(checked){
+     jugadasInvalidas();
+}
+    if(!checked){
+        int k=0;
+        for(k=0;k<81;k++){
+            QPalette *palette = new QPalette();
+             palette->setColor(QPalette::Base,Qt::white);
+             cuadros[k]->setPalette(*palette);
+
+        }
+
+    }
+
+}
+
+
+void sudoku::on_incorrecto_toggled(bool checked)
+{
+    if(checked){
+     jugadasIncorrectas();
+}
+    if(!checked){
+        int k=0;
+        for(k=0;k<81;k++){
+            QPalette *palette = new QPalette();
+             palette->setColor(QPalette::Base,Qt::white);
+             cuadros[k]->setPalette(*palette);
+
+        }
+
+    }
+
+
+
+}

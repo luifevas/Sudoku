@@ -77,6 +77,32 @@
      <string>Cargar</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="invalido">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>270</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Jugadas Invalidas</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="incorrecto">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>310</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Jugadas Incorrectas</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
