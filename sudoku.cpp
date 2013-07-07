@@ -5,6 +5,7 @@
 #include <QTime>
 #include <QTextStream>
 #include <iostream>
+#include <QStringList>
 
 sudoku::sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -12,6 +13,7 @@ sudoku::sudoku(QWidget *parent) :
 {
     ui->setupUi(this);
     llenarsudoku();
+
 }
 
 sudoku::~sudoku()
@@ -84,6 +86,11 @@ void sudoku::llenarsudoku(){
             for(int j=0; j<9;j++){
                 numero=matrizSudoku[i][j];
                 cuadros[k]->setText(QString::number(numero));
+                if(numero!=0){
+                    cuadros[k]->setEnabled(false);
+
+
+                }
                 k++;
             }
         }
@@ -337,8 +344,10 @@ void sudoku:: guardarPartida(){
         for(int j=0;j<9;j++){
 
              QTextStream out(&file);
-             out <<encriptar(matriz[9][9]);
-
+             if((i==8)&&(j==8)){
+             out <<encriptar(matriz[i][j]);}
+             else
+             out <<encriptar(matriz[i][j]).append(",");
         }
          QTextStream out(&file);
             out << "\n";
@@ -348,30 +357,128 @@ void sudoku:: guardarPartida(){
 
 
 }
-/*
-void sudoku:: cargarPartida(){
 
-    QFile file ("guardar.txt"),
-    file.open(QIODevide::ReadOnly);
+void sudoku:: cargarPartida(){
+    int k=0;
+    QFile file ("guardar.txt");
+    file.open(QIODevice::ReadOnly);
+
+            QTextStream in(&file);
+                QString line = in.readAll();
+
+                QStringList listastr;
+                listastr.clear();
+                listastr=line.split(",",QString::SkipEmptyParts);
+                //int validar= listastr.size();
+               // std::cout << QString::number(validar).toStdString() << std::endl;
+                for(k=0;k<81;k++){
+                    int numero=decode(listastr.at(k));
+                    if(numero==0){
+                        cuadros[k]->setText("");
+                    }
+                    else
+                    cuadros[k]->setText(QString::number(numero));
+
+               }
+
+
+
+
+
+
+
+    file.close();
+}
+
+void sudoku::guardarSolucion(){
+    QFile file ("guardarS.txt");
+    file.open(QIODevice::WriteOnly);
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
-            QTextStream in(&file);
-            while (in.readline != "\n") {
-                QString line = in.readLine();
-                process_line(line);
 
-            }
-
-
+             QTextStream out(&file);
+             if((i==8)&&(j==8)){
+             out <<encriptar(matriz[i][j]);}
+             else
+             out <<encriptar(matriz[i][j]).append(",");
         }
+         QTextStream out(&file);
+            out << "\n";
+}
 
+    file.close();
 
+}
 
+void sudoku::cargarSolucion(){
+    int i=0, j=0,k=0;
+    QFile file ("guardarS.txt");
+    file.open(QIODevice::ReadOnly);
+
+            QTextStream in(&file);
+                QString line = in.readAll();
+
+                QStringList listastr;
+                listastr.clear();
+                listastr=line.split(",",QString::SkipEmptyParts);
+
+                for(i=0;i<9;i++){
+                    for(j=0;j<9;j++){
+                        int numero=decode(listastr.at(k));
+                        matriz[i][j]= numero;
+                     k++;
+                    }
+                }
+}
+void sudoku::guardarOriginal(){
+
+    QFile file ("guardarO.txt");
+    file.open(QIODevice::WriteOnly);
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+
+             QTextStream out(&file);
+             if((i==8)&&(j==8)){
+             out <<encriptar(matrizSudoku[i][j]);}
+             else
+             out <<encriptar(matrizSudoku[i][j]).append(",");
+        }
+         QTextStream out(&file);
+            out << "\n";
+}
+
+    file.close();
 
 
 }
+void sudoku::cargarOriginal(){
+    int i=0, j=0,k=0;
+    QFile file ("guardarO.txt");
+    file.open(QIODevice::ReadOnly);
+
+            QTextStream in(&file);
+                QString line = in.readAll();
+
+                QStringList listastr;
+                listastr.clear();
+                listastr=line.split(",",QString::SkipEmptyParts);
+
+                for(i=0;i<9;i++){
+                    for(j=0;j<9;j++){
+                        int numero=decode(listastr.at(k));
+                        matrizSudoku[i][j]= numero;
+                        if(numero!=0){
+                            cuadros[k]->setEnabled(false);
+
+
+                        }
+                     k++;
+                    }
+                }
+
+
 }
-*/
+
 void sudoku:: obtenerMatriz(int matriz[9][9]){
     int k=0;
     for(int i=0;i<9;i++){
@@ -482,8 +589,10 @@ int sudoku:: finDeJuego(){
 
 void sudoku::on_pushButton_clicked()
 {
-
+    guardarOriginal();
     guardarPartida();
+    guardarSolucion();
+
 
 }
 
@@ -530,3 +639,52 @@ QString sudoku:: encriptar(int num){
 
 
 }
+
+int sudoku::decode(QString codigo){
+    int code = codigo.toInt();
+    if(code==11){
+      return 0;
+    }
+    if(code==100){
+      return 1 ;
+    }
+    if(code==101){
+     return 2 ;
+    }
+    if(code==110){
+      return 3;
+    }
+    if(code==111){
+      return 4;
+    }
+    if(code==1000){
+      return 5;
+    }
+    if(code==1001){
+      return 6;
+    }
+    if(code==1010){
+      return 7;
+    }
+    if(code==1011){
+      return 8;
+    }
+    if(code==1100){
+      return 9;
+    }
+
+}
+
+void sudoku::on_cargar_clicked()
+{
+    for(int i=0;i<81;i++){
+
+        cuadros[i]->setEnabled(true);
+
+    }
+    cargarOriginal();
+    cargarPartida();
+    cargarSolucion();
+
+}
+

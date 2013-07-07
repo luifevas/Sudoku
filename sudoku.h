@@ -42,12 +42,20 @@ public:
     void jugadasInvalidas();
     int finDeJuego();
     QString encriptar(int num);
+    int decode(QString code);
+    void cargarPartida();
+    void cargarSolucion();
+    void guardarSolucion();
+    void cargarOriginal();
+    void guardarOriginal();
 private slots:
     void on_validar_clicked();
 
     void on_pushButton_clicked();
 
     void on_pista_clicked();
+
+    void on_cargar_clicked();
 
 private:
     Ui::sudoku *ui;
