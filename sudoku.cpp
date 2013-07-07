@@ -415,6 +415,70 @@ void sudoku:: pistaJugador(){
     }
 }
 
+void sudoku:: jugadasInvalidas(){
+    int i,j;
+    int matrizTemp[9][9];
+    llenarCeros(matrizTemp);
+    obtenerMatriz(matrizTemp);
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(matrizTemp[i][j]<10 && matrizTemp[i][j]>0){
+                if(verificarHorizontal(matrizTemp,i,j)==1 || verificarVertical(matrizTemp,i,j)==1 || verificarRecuadro(matrizTemp,i,j)==1){
+                    //cambio de la casilla en la ventana
+                    QString str = "hola";
+                      std::cout << str.toStdString() << std::endl;
+                }
+            }else{
+                //cambio de la casilla en la ventana
+                QString str = "hola";
+                  std::cout << str.toStdString() << std::endl;
+            }
+        }
+    }
+}
+
+void sudoku:: jugadasIncorrectas(){
+    int i,j;
+    int matrizTemp[9][9];
+    llenarCeros(matrizTemp);
+    obtenerMatriz(matrizTemp);
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(matrizTemp[i][j]<10 && matrizTemp[i][j]>0){
+                if(matriz[i][j]!=matrizTemp[i][j]){
+                    //cambio de la casilla en la ventana
+                    QString str = "hola";
+                      std::cout << str.toStdString() << std::endl;
+                }
+            }else{
+                //cambio de la casilla en la ventana
+                QString str = "hola";
+                  std::cout << str.toStdString() << std::endl;
+            }
+        }
+    }
+}
+
+int sudoku:: finDeJuego(){
+    int i,j;
+    int matrizTemp[9][9];
+    llenarCeros(matrizTemp);
+    obtenerMatriz(matrizTemp);
+    for(i=0;i<9;i++){
+        for(j=0;j<9;j++){
+            if(matrizTemp[i][j]<10 && matrizTemp[i][j]>0){
+                if(matriz[i][j]!=matrizTemp[i][j]){
+                   return 1;
+                }
+            }else{
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+
 void sudoku::on_pushButton_clicked()
 {
 

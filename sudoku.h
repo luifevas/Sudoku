@@ -38,6 +38,9 @@ public:
     void guardarPartida();
     void obtenerMatriz(int matriz[9][9]);
     void pistaJugador();
+    void jugadasIncorrectas();
+    void jugadasInvalidas();
+    int finDeJuego();
     QString encriptar(int num);
 private slots:
     void on_validar_clicked();
