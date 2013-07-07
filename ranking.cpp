@@ -7,6 +7,8 @@ Ranking::Ranking(QWidget *parent) :
 {
     ui->setupUi(this);
     model = new QStandardItemModel(3,2,this);
+    model->setHorizontalHeaderItem(0,new QStandardItem("Nombre"));
+     model->setHorizontalHeaderItem(1,new QStandardItem("Tiempo"));
     for(int i=0; i<3;i++){
         QModelIndex index1 = model->index(i,0,QModelIndex());
         model->setData(index1,"h");
