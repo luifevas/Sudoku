@@ -329,13 +329,14 @@ void sudoku:: guardarPartida(){
     llenarCeros(matriz);
     obtenerMatriz(matriz);
 
+
     QFile file ("guardar.txt");
     file.open(QIODevice::WriteOnly);
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
 
              QTextStream out(&file);
-             out <<QString::number(matriz[i][j]);
+             out <<encriptar(matriz[9][9]);
 
         }
          QTextStream out(&file);
@@ -384,7 +385,7 @@ void sudoku:: obtenerMatriz(int matriz[9][9]){
     }
 }
 
-void pistaJugador(){
+void sudoku:: pistaJugador(){
     int matrizTemp[9][9],i,j,k=0;
     QList<int> posX,posY;
     QTime time = QTime::currentTime();
@@ -418,5 +419,49 @@ void sudoku::on_pushButton_clicked()
 {
 
     guardarPartida();
+
+}
+
+void sudoku::on_pista_clicked()
+{
+    pistaJugador();
+}
+QString sudoku:: encriptar(int num){
+
+
+            if(num==0){
+              return "0011";
+            }
+            if(num==1){
+              return "0100";
+            }
+            if(num==2){
+             return "0101";
+            }
+            if(num==3){
+              return "0110";
+            }
+            if(num==4){
+              return "0111";
+            }
+            if(num==5){
+              return "1000";
+            }
+            if(num==6){
+              return "1001";
+            }
+            if(num==7){
+              return "1010";
+            }
+            if(num==8){
+              return "1011";
+            }
+            if(num==9){
+              return "1100";
+            }
+
+
+
+
 
 }

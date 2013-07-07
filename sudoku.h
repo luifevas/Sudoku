@@ -37,10 +37,14 @@ public:
     void colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPistas);
     void guardarPartida();
     void obtenerMatriz(int matriz[9][9]);
+    void pistaJugador();
+    QString encriptar(int num);
 private slots:
     void on_validar_clicked();
 
     void on_pushButton_clicked();
+
+    void on_pista_clicked();
 
 private:
     Ui::sudoku *ui;

@@ -13,8 +13,20 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        sudoku.cpp
+        sudoku.cpp \
+    ventanaprincipal.cpp \
+    eleccion.cpp \
+    instrucciones.cpp \
+    acercade.cpp
 
-HEADERS  += sudoku.h
+HEADERS  += sudoku.h \
+    ventanaprincipal.h \
+    eleccion.h \
+    instrucciones.h \
+    acercade.h
 
-FORMS    += sudoku.ui
+FORMS    += sudoku.ui \
+    ventanaprincipal.ui \
+    eleccion.ui \
+    instrucciones.ui \
+    acercade.ui
