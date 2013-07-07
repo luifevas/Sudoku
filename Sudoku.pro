@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     eleccion.cpp \
     instrucciones.cpp \
     acercade.cpp \
-    ranking.cpp
+    ranking.cpp \
+    jugador.cpp
 
 HEADERS  += sudoku.h \
     ventanaprincipal.h \
     eleccion.h \
     instrucciones.h \
     acercade.h \
-    ranking.h
+    ranking.h \
+    jugador.h
 
 FORMS    += sudoku.ui \
     ventanaprincipal.ui \
