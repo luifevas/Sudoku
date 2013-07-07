@@ -4,6 +4,7 @@
 #include "string"
 #include <QTime>
 #include <QTextStream>
+#include <iostream>
 
 sudoku::sudoku(QWidget *parent) :
     QMainWindow(parent),
