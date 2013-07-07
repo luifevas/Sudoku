@@ -2,6 +2,7 @@
 #include "ui_ventanaprincipal.h"
 #include "eleccion.h"
 #include "acercade.h"
+#include "ranking.h"
 
 VentanaPrincipal::VentanaPrincipal(QWidget *parent) :
     QDialog(parent),
@@ -30,4 +31,11 @@ void VentanaPrincipal::on_acerca_clicked()
     acercade *a= new acercade();
     close();
     a->show();
+}
+
+void VentanaPrincipal::on_pushButton_clicked()
+{
+    Ranking *r= new Ranking();
+    close();
+    r->show();
 }

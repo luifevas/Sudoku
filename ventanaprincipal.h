@@ -23,6 +23,8 @@ signals:
 private slots:
     void on_acerca_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::VentanaPrincipal *ui;
 };
