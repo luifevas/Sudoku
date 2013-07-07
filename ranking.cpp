@@ -1,7 +1,7 @@
 #include "ranking.h"
 #include "ui_ranking.h"
-#include "jugador.h"
-
+#include <QFile>
+#include <QTextStream>
 Ranking::Ranking(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Ranking)
@@ -28,7 +28,21 @@ Ranking::~Ranking()
 
 QList<Jugador> Ranking:: cargarRanking(){
     QList<Jugador> ranking;
-    retturn ranking;
+
+    QFile file ("ranking.txt");
+    file.open(QIODevice::ReadOnly);
+    QTextStream in(&file);
+
+    while(!in.atEnd()){
+        QString linea= in.readLine();
+        Jugador tmp= new Jugador(linea.section(',',0,0),linea.section(',',1,1).toInt());
+        ranking.append(tmp);
+
+    }
+
+
+
+    return ranking;
 }
 
 QList<Jugador> Ranking:: ordenarRanking(QList<Jugador> ranking){
@@ -43,6 +57,6 @@ QList<Jugador> Ranking:: ordenarRanking(QList<Jugador> ranking){
         ordenado.append(ranking.at(pos));
         ranking.removeAt(pos);
     }
-    return ordenado
+    return ordenado;
 }
 

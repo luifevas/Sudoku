@@ -1,10 +1,10 @@
 #include "jugador.h"
 #include <QString>
 
-Jugador::Jugador(QString nom)
+Jugador::Jugador(QString nom, int p)
 {
     this->nombre=nom;
-    this->puntaje=0;
+    this->puntaje=p;
 
 
 }

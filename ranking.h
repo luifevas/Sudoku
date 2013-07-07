@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QtGui>
+#include "jugador.h"
 
 namespace Ui {
 class Ranking;
@@ -14,8 +15,8 @@ class Ranking : public QDialog
     
 public:
     explicit Ranking(QWidget *parent = 0);
-    QList cargarRanking();
-    QList ordenarRanking(QList ranking);
+    QList<Jugador> cargarRanking();
+    QList<Jugador> ordenarRanking(QList<Jugador> ranking);
     ~Ranking();
     
 private:

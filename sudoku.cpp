@@ -456,7 +456,7 @@ void sudoku::cargarOriginal(){
     QFile file ("guardarO.txt");
     file.open(QIODevice::ReadOnly);
 
-            QTextStream in(&file);
+                QTextStream in(&file);
                 QString line = in.readAll();
 
                 QStringList listastr;
