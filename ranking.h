@@ -14,6 +14,8 @@ class Ranking : public QDialog
     
 public:
     explicit Ranking(QWidget *parent = 0);
+    QList cargarRanking();
+    QList ordenarRanking(QList ranking);
     ~Ranking();
     
 private:
