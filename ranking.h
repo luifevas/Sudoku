@@ -2,6 +2,7 @@
 #define RANKING_H
 
 #include <QDialog>
+#include <QtGui>
 
 namespace Ui {
 class Ranking;
@@ -17,6 +18,7 @@ public:
     
 private:
     Ui::Ranking *ui;
+     QStandardItemModel *model;
 };
 
 #endif // RANKING_H
