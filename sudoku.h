@@ -7,7 +7,7 @@
 #include <QGridLayout>
 #include <QFile>
 #include <string>
-
+#include "lcdnumber.h"
 
 namespace Ui {
 class sudoku;
@@ -66,6 +66,7 @@ private:
     QLineEdit *cuadros[81];
     QList<int> posibilidades;
     QFile guardar;
+
 };
 
 #endif // SUDOKU_H

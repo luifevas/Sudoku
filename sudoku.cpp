@@ -16,6 +16,10 @@ sudoku::sudoku(QWidget *parent) :
     ui->setupUi(this);
     llenarsudoku();
 
+   LCDNumber *number = new LCDNumber(0,0);
+   ui->tlayout->addWidget(number);
+    number->start();
+
 }
 
 sudoku::~sudoku()

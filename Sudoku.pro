@@ -27,7 +27,8 @@ HEADERS  += sudoku.h \
     instrucciones.h \
     acercade.h \
     ranking.h \
-    jugador.h
+    jugador.h \
+    lcdnumber.h
 
 FORMS    += sudoku.ui \
     ventanaprincipal.ui \
