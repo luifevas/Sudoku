@@ -15,7 +15,7 @@ class LCDNumber: public QLCDNumber
     LCDNumber(int minutes,int seconds){
         timer	= 	new QTimer();
         timeValue	=	new QTime(0,minutes,seconds,0);
-        this->display(timeValue->toString(QString("ss")));
+        this->display(timeValue->toString(QString("mm:ss")));
         QObject::connect(timer,SIGNAL(timeout()),this,SLOT(setDisplay()));
 
     }
@@ -29,7 +29,7 @@ class LCDNumber: public QLCDNumber
       this->timeValue->setHMS(0,this->timeValue->addMSecs(+1).minute(),
                     this->timeValue->addMSecs(+1).second(),
                     this->timeValue->addMSecs(+1).msec());
-      this->display(this->timeValue->toString(QString("ss")));
+      this->display(this->timeValue->toString(QString("mm:ss")));
     }
 
     void start(){
