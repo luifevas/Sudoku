@@ -18,6 +18,8 @@ public:
 private slots:
     void on_empezar_clicked();
 
+    void on_nombre_textEdited(const QString &arg1);
+
 private:
     Ui::eleccion *ui;
 };

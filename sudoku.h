@@ -8,6 +8,7 @@
 #include <QFile>
 #include <string>
 #include "lcdnumber.h"
+#include <QString>
 
 namespace Ui {
 class sudoku;
@@ -18,12 +19,12 @@ class sudoku : public QMainWindow
     Q_OBJECT
     
 public:
-    explicit sudoku(QWidget *parent = 0);    
+    explicit sudoku(QWidget *parent = 0, int dificultad=0,QString nomJugador="");
     ~sudoku();
     QList<int> listPosX;
     QList<int> listPosY;
     int matriz[9][9],matrizSudoku[9][9];
-    void llenarsudoku();
+    void llenarsudoku(int dif, QString nom);
     int verificarHorizontal(int matriz[9][9], int x, int y);
     int verificarVertical(int matriz[9][9], int x, int y);
     int verificarRecuadro(int matriz[9][9], int x, int y);

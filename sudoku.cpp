@@ -7,26 +7,26 @@
 #include <iostream>
 #include <QStringList>
 #include <QPalette>
+#include <QMessageBox>
 
 
-sudoku::sudoku(QWidget *parent) :
+sudoku::sudoku(QWidget *parent,int dificultad,QString nomJugador) :
     QMainWindow(parent),
     ui(new Ui::sudoku)
 {
     ui->setupUi(this);
-    llenarsudoku();
+    llenarsudoku(dificultad,nomJugador);
 
    LCDNumber *number = new LCDNumber(0,0);
    ui->tlayout->addWidget(number);
     number->start();
-
 }
 
 sudoku::~sudoku()
 {
     delete ui;
 }
-void sudoku::llenarsudoku(){
+void sudoku::llenarsudoku(int dif, QString jugador){
     QTime time = QTime::currentTime();
     qsrand (time.msec());
     int a=0,k=0,numero=0,size=0,pos=0,x=0,y=0,posibilidadesSize=0;
@@ -85,7 +85,7 @@ void sudoku::llenarsudoku(){
         }
 
         // Se llena una matriz de ceros con pista para ser resuelto
-        colocarPistas(matriz,matrizSudoku,4);
+        colocarPistas(matriz,matrizSudoku,dif);
 
         k=0;
         for(int i=0 ; i<9; i++){
@@ -314,6 +314,7 @@ void sudoku:: colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPis
 
 void sudoku::on_validar_clicked()
 {
+
     int matriz [9][9];
     int k=0;
     for(int i=0;i<9;i++){
@@ -326,14 +327,18 @@ void sudoku::on_validar_clicked()
 
 
     }
-    if (verificarSudoku(matriz)==0){
-        ui->validar->setText("Esta correcto");
 
+
+
+
+    if (verificarSudoku(matriz)==0){
+        QMessageBox::information(this,"Felicitaciones!","Ha terminado este sudoku!");
+       this->close();
 
     }else{
-         ui->validar->setText("Esta incorrecto");
-
+         QMessageBox::warning(this,"Lo siento","Hay errores en este sudoku");
     }
+
 
 }
 
@@ -740,3 +745,4 @@ void sudoku::on_incorrecto_toggled(bool checked)
 
 
 }
+
