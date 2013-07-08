@@ -4,7 +4,7 @@
 * @author Luis Caviedes
 * @author Luis Vasquez
 *
-* @date 02/06/2013
+* @date 07/07/2013
 */
 
 
@@ -29,6 +29,8 @@ private slots:
     void on_empezar_clicked();
 
     void on_nombre_textEdited(const QString &arg1);
+
+    void on_pushButton_clicked();
 
 private:
     Ui::eleccion *ui;

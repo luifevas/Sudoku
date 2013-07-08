@@ -1,0 +1,509 @@
+\hypertarget{classsudoku}{\section{sudoku Class Reference}
+\label{classsudoku}\index{sudoku@{sudoku}}
+}
+Inheritance diagram for sudoku\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classsudoku}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsudoku_a4fca394ee6b069056fa9e12ad5636e2a}{{\bfseries sudoku} (Q\-Widget $\ast$parent=0, int dificultad=0, Q\-String nom\-Jugador=\char`\"{}\char`\"{})}\label{classsudoku_a4fca394ee6b069056fa9e12ad5636e2a}
+
+\item 
+void \hyperlink{classsudoku_a617ded672f64a712fdb32cdb39587e41}{llenarsudoku} (int dif, Q\-String nom)
+\item 
+int \hyperlink{classsudoku_a9eb0e3df6cdeda0dd3895e982c8eb639}{verificar\-Horizontal} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int x, int y)
+\item 
+int \hyperlink{classsudoku_aae809634b98c50419673cbfbeeed1424}{verificar\-Vertical} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int x, int y)
+\item 
+int \hyperlink{classsudoku_a1b70089b6aa10d82a1221cd393e317d4}{verificar\-Recuadro} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int x, int y)
+\item 
+int \hyperlink{classsudoku_a666728002336616bf9c8443574e2a0a2}{verificar\-Sudoku} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]})
+\item 
+void \hyperlink{classsudoku_a050dfc7ca3f27165923db48d7b3fafd9}{sacar\-Ceros} ()
+\item 
+void \hyperlink{classsudoku_a0a1d90110883ce8af57b1b3aeef28567}{llenar\-Ceros} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]})
+\item 
+int \hyperlink{classsudoku_ab7095d78fa0050d8b4f33ae71afd7ddd}{es\-Posible} (int posibilidad, int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int pos\-X, int pos\-Y)
+\item 
+Q\-List$<$ int $>$ \hyperlink{classsudoku_af1d2b7818b60dac0845d719f0aec9cb2}{reiniciar} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int pos\-X, int pos\-Y)
+\item 
+Q\-List$<$ int $>$ \hyperlink{classsudoku_a781664045c5796e65aaeef1e7f7f26d5}{lista\-De\-Posibilidades} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int pos\-X, int pos\-Y)
+\item 
+void \hyperlink{classsudoku_ac3f30cbd81fbb88c7da0e4aaa9fc2e7a}{copiar\-Matriz} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int matriz\-Copia\mbox{[}9\mbox{]}\mbox{[}9\mbox{]})
+\item 
+void \hyperlink{classsudoku_a523bdf77cfc3221b46a2ef2ef6f35dc7}{colocar\-Pistas} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int matriz\-Sudoku\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, int num\-Pistas)
+\item 
+void \hyperlink{classsudoku_a382e974f9b268bad72349e835046bc9e}{guardar\-Partida} ()
+\item 
+void \hyperlink{classsudoku_ab810a66d51bbe7abef401fff3bbeab66}{obtener\-Matriz} (int matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]})
+\item 
+void \hyperlink{classsudoku_a609094f632cbb607bcf4ccc6c5163ee6}{pista\-Jugador} ()
+\item 
+void \hyperlink{classsudoku_a557f08c7f68d6f464cf55b6cb263e4f1}{jugadas\-Incorrectas} ()
+\item 
+void \hyperlink{classsudoku_aa59a6bcde7a2de2b8522ca45de7e7fda}{jugadas\-Invalidas} ()
+\item 
+Q\-String \hyperlink{classsudoku_a801aaa352372d14d0e782c74e59dcffd}{encriptar} (int num)
+\item 
+int \hyperlink{classsudoku_a38e9561028b7e53bcb33a7b41301a25c}{decode} (Q\-String code)
+\item 
+void \hyperlink{classsudoku_a52516f05ede755c0a383d0ead1eb7f98}{cargar\-Partida} ()
+\item 
+void \hyperlink{classsudoku_aaf120f44b1fb018460832c90f3411115}{cargar\-Solucion} ()
+\item 
+void \hyperlink{classsudoku_a56f04c8bd9362116a7d558a58a621167}{guardar\-Solucion} ()
+\item 
+void \hyperlink{classsudoku_a422ab0aa3c2044ee421283a69270ac38}{cargar\-Original} ()
+\item 
+void \hyperlink{classsudoku_a7bd027391311e65fc690df2f3bc67a44}{guardar\-Original} ()
+\item 
+Q\-List$<$ \hyperlink{class_jugador}{Jugador} $>$ \hyperlink{classsudoku_aed2f8fec3117c5a7cb8c3a2f510a28c9}{cargar\-Ranking} ()
+\begin{DoxyCompactList}\small\item\em cargar\-Ranking obtiene los datos almacenado en el archivo \char`\"{}ranking.\-txt\char`\"{}. \end{DoxyCompactList}\item 
+void \hyperlink{classsudoku_a2811b7d6ec908b16314a6ff6ec2659dc}{guardar\-Ranking} (int puntaje)
+\begin{DoxyCompactList}\small\item\em guardar\-Ranking guarda el elemento una vez concluida la partida de forma exitosa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classsudoku_afde53a179f11c54b772a8723929b3a7b}{Q\-List$<$ int $>$ {\bfseries list\-Pos\-X}}\label{classsudoku_afde53a179f11c54b772a8723929b3a7b}
+
+\item 
+\hypertarget{classsudoku_a26df7ff7d6715034015c965ddb8c9c5e}{Q\-List$<$ int $>$ {\bfseries list\-Pos\-Y}}\label{classsudoku_a26df7ff7d6715034015c965ddb8c9c5e}
+
+\item 
+\hypertarget{classsudoku_ae0cee3e3b8b57d8ac65a9d0f88201ea6}{int {\bfseries matriz} \mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}\label{classsudoku_ae0cee3e3b8b57d8ac65a9d0f88201ea6}
+
+\item 
+\hypertarget{classsudoku_a75b7e268f5cd8124fa4455081a5a2941}{int {\bfseries matriz\-Sudoku} \mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}\label{classsudoku_a75b7e268f5cd8124fa4455081a5a2941}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsudoku_a422ab0aa3c2044ee421283a69270ac38}{\index{sudoku@{sudoku}!cargar\-Original@{cargar\-Original}}
+\index{cargar\-Original@{cargar\-Original}!sudoku@{sudoku}}
+\subsubsection[{cargar\-Original}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::cargar\-Original (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a422ab0aa3c2044ee421283a69270ac38}
+cargar\-Original carga los datos almacenado en el archivo \char`\"{}guardar\-O.\-txt\char`\"{}. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a52516f05ede755c0a383d0ead1eb7f98}{\index{sudoku@{sudoku}!cargar\-Partida@{cargar\-Partida}}
+\index{cargar\-Partida@{cargar\-Partida}!sudoku@{sudoku}}
+\subsubsection[{cargar\-Partida}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::cargar\-Partida (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a52516f05ede755c0a383d0ead1eb7f98}
+cargar\-Partida carga los datos almacenado en el archivo \char`\"{}guardar.\-txt\char`\"{}. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_aed2f8fec3117c5a7cb8c3a2f510a28c9}{\index{sudoku@{sudoku}!cargar\-Ranking@{cargar\-Ranking}}
+\index{cargar\-Ranking@{cargar\-Ranking}!sudoku@{sudoku}}
+\subsubsection[{cargar\-Ranking}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Jugador} $>$ sudoku\-::cargar\-Ranking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_aed2f8fec3117c5a7cb8c3a2f510a28c9}
+
+
+cargar\-Ranking obtiene los datos almacenado en el archivo \char`\"{}ranking.\-txt\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+Q\-List$<$\-Jugador$>$ una lista con los jugadores que se encuentran en el archivo de texto. 
+\end{DoxyReturn}
+\hypertarget{classsudoku_aaf120f44b1fb018460832c90f3411115}{\index{sudoku@{sudoku}!cargar\-Solucion@{cargar\-Solucion}}
+\index{cargar\-Solucion@{cargar\-Solucion}!sudoku@{sudoku}}
+\subsubsection[{cargar\-Solucion}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::cargar\-Solucion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_aaf120f44b1fb018460832c90f3411115}
+cargar\-Solucion carga los datos almacenado en el archivo \char`\"{}guardar\-S.\-txt\char`\"{}. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a523bdf77cfc3221b46a2ef2ef6f35dc7}{\index{sudoku@{sudoku}!colocar\-Pistas@{colocar\-Pistas}}
+\index{colocar\-Pistas@{colocar\-Pistas}!sudoku@{sudoku}}
+\subsubsection[{colocar\-Pistas}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::colocar\-Pistas (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{matriz\-Sudoku\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{num\-Pistas}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a523bdf77cfc3221b46a2ef2ef6f35dc7}
+colocar\-Pistas se colocan pista para que se pueda resolver el sudoku de acuerdo al nivel seleccionado. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 matriz que contiene el sudoku resuelto. \\
+\hline
+{\em matriz\-Sudoku} & variable int 9x9 matriz la cual se le va a colocar las pista y posteriormente se la presenta en la interfaz grafica. \\
+\hline
+{\em num\-Pistas} & variable tipo int la cual nos proporciona cuantas pista se le da al jugador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_ac3f30cbd81fbb88c7da0e4aaa9fc2e7a}{\index{sudoku@{sudoku}!copiar\-Matriz@{copiar\-Matriz}}
+\index{copiar\-Matriz@{copiar\-Matriz}!sudoku@{sudoku}}
+\subsubsection[{copiar\-Matriz}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::copiar\-Matriz (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{matriz\-Copia\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_ac3f30cbd81fbb88c7da0e4aaa9fc2e7a}
+copiar\-Matriz hace una copia de la matriz. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 matriz la cual se va a sacar una copia. \\
+\hline
+{\em matriz\-Copia} & variable int 9x9 en la cual se va a llenar con los elementos que se encuentran en la variable matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a38e9561028b7e53bcb33a7b41301a25c}{\index{sudoku@{sudoku}!decode@{decode}}
+\index{decode@{decode}!sudoku@{sudoku}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::decode (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{code}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a38e9561028b7e53bcb33a7b41301a25c}
+decode decodifica la cadena de caracteres que se envia por parametro. 
+\begin{DoxyParams}{Parameters}
+{\em code} & variable tipo Q\-String el cual va a ser decodificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int que representa la decodificado de la cadena de caracteres . 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a801aaa352372d14d0e782c74e59dcffd}{\index{sudoku@{sudoku}!encriptar@{encriptar}}
+\index{encriptar@{encriptar}!sudoku@{sudoku}}
+\subsubsection[{encriptar}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String sudoku\-::encriptar (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a801aaa352372d14d0e782c74e59dcffd}
+encriptar codifica el numero envia por parametro. 
+\begin{DoxyParams}{Parameters}
+{\em num} & variable tipo int el cual va a ser codificado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\-String que representa una cadena de caracteres del numero codificado. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_ab7095d78fa0050d8b4f33ae71afd7ddd}{\index{sudoku@{sudoku}!es\-Posible@{es\-Posible}}
+\index{es\-Posible@{es\-Posible}!sudoku@{sudoku}}
+\subsubsection[{es\-Posible}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::es\-Posible (
+\begin{DoxyParamCaption}
+\item[{int}]{posibilidad, }
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_ab7095d78fa0050d8b4f33ae71afd7ddd}
+es\-Posible hace una verificacion si el numero deseado es una opcion valida a colocar en la casilla actual. 
+\begin{DoxyParams}{Parameters}
+{\em posibilidad} & variable tipo int que representa el numero que se va a colocar en la casilla. \\
+\hline
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando el numero proporcionado es valido y 1 cuando es invalido. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a7bd027391311e65fc690df2f3bc67a44}{\index{sudoku@{sudoku}!guardar\-Original@{guardar\-Original}}
+\index{guardar\-Original@{guardar\-Original}!sudoku@{sudoku}}
+\subsubsection[{guardar\-Original}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::guardar\-Original (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a7bd027391311e65fc690df2f3bc67a44}
+guardar\-Original crea un archivo txt con los datos iniciales de la partida actual. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a382e974f9b268bad72349e835046bc9e}{\index{sudoku@{sudoku}!guardar\-Partida@{guardar\-Partida}}
+\index{guardar\-Partida@{guardar\-Partida}!sudoku@{sudoku}}
+\subsubsection[{guardar\-Partida}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::guardar\-Partida (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a382e974f9b268bad72349e835046bc9e}
+guardar\-Partida crea un archivo txt con los datos de la partida actual. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a2811b7d6ec908b16314a6ff6ec2659dc}{\index{sudoku@{sudoku}!guardar\-Ranking@{guardar\-Ranking}}
+\index{guardar\-Ranking@{guardar\-Ranking}!sudoku@{sudoku}}
+\subsubsection[{guardar\-Ranking}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::guardar\-Ranking (
+\begin{DoxyParamCaption}
+\item[{int}]{puntaje}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a2811b7d6ec908b16314a6ff6ec2659dc}
+
+
+guardar\-Ranking guarda el elemento una vez concluida la partida de forma exitosa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em puntaje} & se guarda en el archivo el nuevo elemento. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsudoku_a56f04c8bd9362116a7d558a58a621167}{\index{sudoku@{sudoku}!guardar\-Solucion@{guardar\-Solucion}}
+\index{guardar\-Solucion@{guardar\-Solucion}!sudoku@{sudoku}}
+\subsubsection[{guardar\-Solucion}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::guardar\-Solucion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a56f04c8bd9362116a7d558a58a621167}
+guardar\-Solucion crea un archivo txt con los datos del sudoku resuelto de la partida actual. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a557f08c7f68d6f464cf55b6cb263e4f1}{\index{sudoku@{sudoku}!jugadas\-Incorrectas@{jugadas\-Incorrectas}}
+\index{jugadas\-Incorrectas@{jugadas\-Incorrectas}!sudoku@{sudoku}}
+\subsubsection[{jugadas\-Incorrectas}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::jugadas\-Incorrectas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a557f08c7f68d6f464cf55b6cb263e4f1}
+jugadas\-Incorrectas se verifica en funcion al tablero resuelto. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_aa59a6bcde7a2de2b8522ca45de7e7fda}{\index{sudoku@{sudoku}!jugadas\-Invalidas@{jugadas\-Invalidas}}
+\index{jugadas\-Invalidas@{jugadas\-Invalidas}!sudoku@{sudoku}}
+\subsubsection[{jugadas\-Invalidas}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::jugadas\-Invalidas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_aa59a6bcde7a2de2b8522ca45de7e7fda}
+jugadas\-Invalidas no validas segun el estado actual del tablero. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a781664045c5796e65aaeef1e7f7f26d5}{\index{sudoku@{sudoku}!lista\-De\-Posibilidades@{lista\-De\-Posibilidades}}
+\index{lista\-De\-Posibilidades@{lista\-De\-Posibilidades}!sudoku@{sudoku}}
+\subsubsection[{lista\-De\-Posibilidades}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ int $>$ sudoku\-::lista\-De\-Posibilidades (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a781664045c5796e65aaeef1e7f7f26d5}
+lista\-De\-Posibilidades creo una lista con todos lo numero posibles que se pueden colocar en la casilla seleccionada. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando el numero proporcionado es valido y 1 cuando es invalido. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a0a1d90110883ce8af57b1b3aeef28567}{\index{sudoku@{sudoku}!llenar\-Ceros@{llenar\-Ceros}}
+\index{llenar\-Ceros@{llenar\-Ceros}!sudoku@{sudoku}}
+\subsubsection[{llenar\-Ceros}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::llenar\-Ceros (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a0a1d90110883ce8af57b1b3aeef28567}
+llenar\-Ceros llena toda la matriz con 0. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a617ded672f64a712fdb32cdb39587e41}{\index{sudoku@{sudoku}!llenarsudoku@{llenarsudoku}}
+\index{llenarsudoku@{llenarsudoku}!sudoku@{sudoku}}
+\subsubsection[{llenarsudoku}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::llenarsudoku (
+\begin{DoxyParamCaption}
+\item[{int}]{dif, }
+\item[{Q\-String}]{nom}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a617ded672f64a712fdb32cdb39587e41}
+llenarsudoku se encarga de la creacion y presentacion en la ventana de juego del sudoku 
+\begin{DoxyParams}{Parameters}
+{\em dif} & \\
+\hline
+{\em nom} & variable Q\-String que representa el nombre del jugador actual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_ab810a66d51bbe7abef401fff3bbeab66}{\index{sudoku@{sudoku}!obtener\-Matriz@{obtener\-Matriz}}
+\index{obtener\-Matriz@{obtener\-Matriz}!sudoku@{sudoku}}
+\subsubsection[{obtener\-Matriz}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::obtener\-Matriz (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_ab810a66d51bbe7abef401fff3bbeab66}
+obtener\-Matriz obtiene los datos del sudoku que se encuentran en la interfaz grafica. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 matriz se le añaden los elementos que son proporcionado por la interfaz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a609094f632cbb607bcf4ccc6c5163ee6}{\index{sudoku@{sudoku}!pista\-Jugador@{pista\-Jugador}}
+\index{pista\-Jugador@{pista\-Jugador}!sudoku@{sudoku}}
+\subsubsection[{pista\-Jugador}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::pista\-Jugador (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a609094f632cbb607bcf4ccc6c5163ee6}
+pista\-Jugador coloca un numero que todavia no a sido puesto en el tablero. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_af1d2b7818b60dac0845d719f0aec9cb2}{\index{sudoku@{sudoku}!reiniciar@{reiniciar}}
+\index{reiniciar@{reiniciar}!sudoku@{sudoku}}
+\subsubsection[{reiniciar}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ int $>$ sudoku\-::reiniciar (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{pos\-X, }
+\item[{int}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_af1d2b7818b60dac0845d719f0aec9cb2}
+reiniciar elimina todo los elemento ingresados distintos de 0 que se encuentra en la fila, columna y recuadro del sudoku. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un Q\-List$<$int$>$ con todas la posiciones de los elementos removidos donde se han ingresado un elemento distinto de 0. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a050dfc7ca3f27165923db48d7b3fafd9}{\index{sudoku@{sudoku}!sacar\-Ceros@{sacar\-Ceros}}
+\index{sacar\-Ceros@{sacar\-Ceros}!sudoku@{sudoku}}
+\subsubsection[{sacar\-Ceros}]{\setlength{\rightskip}{0pt plus 5cm}void sudoku\-::sacar\-Ceros (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a050dfc7ca3f27165923db48d7b3fafd9}
+sacar\-Ceros remueve los ceros que se han añadido a las interfaz grafica y los reemplazo por \char`\"{}\char`\"{}. \begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a9eb0e3df6cdeda0dd3895e982c8eb639}{\index{sudoku@{sudoku}!verificar\-Horizontal@{verificar\-Horizontal}}
+\index{verificar\-Horizontal@{verificar\-Horizontal}!sudoku@{sudoku}}
+\subsubsection[{verificar\-Horizontal}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::verificar\-Horizontal (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a9eb0e3df6cdeda0dd3895e982c8eb639}
+verificar\-Horizontal permite hacer la validacion de toda la fila si es que cumple las reglas del sudoku. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando la casilla verificada es correcta y 1 cuando es incorrecta. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a1b70089b6aa10d82a1221cd393e317d4}{\index{sudoku@{sudoku}!verificar\-Recuadro@{verificar\-Recuadro}}
+\index{verificar\-Recuadro@{verificar\-Recuadro}!sudoku@{sudoku}}
+\subsubsection[{verificar\-Recuadro}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::verificar\-Recuadro (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a1b70089b6aa10d82a1221cd393e317d4}
+verificar\-Recuadro permite hacer la validacion de todo el recuadro si es que cumple las reglas del sudoku. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando la casilla verificada es correcta y 1 cuando es incorrecta. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_a666728002336616bf9c8443574e2a0a2}{\index{sudoku@{sudoku}!verificar\-Sudoku@{verificar\-Sudoku}}
+\index{verificar\-Sudoku@{verificar\-Sudoku}!sudoku@{sudoku}}
+\subsubsection[{verificar\-Sudoku}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::verificar\-Sudoku (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_a666728002336616bf9c8443574e2a0a2}
+verificar\-Sudoku recopilación de las otras funciones de validacion ademas verifica que los numero que se encuentran en las casillas este en 1 y 9. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando la casilla verificada es correcta y 1 cuando es incorrecta. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{classsudoku_aae809634b98c50419673cbfbeeed1424}{\index{sudoku@{sudoku}!verificar\-Vertical@{verificar\-Vertical}}
+\index{verificar\-Vertical@{verificar\-Vertical}!sudoku@{sudoku}}
+\subsubsection[{verificar\-Vertical}]{\setlength{\rightskip}{0pt plus 5cm}int sudoku\-::verificar\-Vertical (
+\begin{DoxyParamCaption}
+\item[{int}]{matriz\mbox{[}9\mbox{]}\mbox{[}9\mbox{]}, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsudoku_aae809634b98c50419673cbfbeeed1424}
+verificar\-Vertical permite hacer la validacion de toda la columna si es que cumple las reglas del sudoku. 
+\begin{DoxyParams}{Parameters}
+{\em matriz} & variable int 9x9 que representa al sudoku \\
+\hline
+{\em x} & variable int que representa la posicion x de la casilla que se quiere verificar. \\
+\hline
+{\em y} & variable int que representa la posicion y de la casilla que se quiere verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un tipo int que retorna 0 cuando la casilla verificada es correcta y 1 cuando es incorrecta. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sudoku_8h}{sudoku.\-h}\item 
+sudoku.\-cpp\end{DoxyCompactItemize}

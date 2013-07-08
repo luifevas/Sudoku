@@ -4,7 +4,7 @@
 * @author Luis Caviedes
 * @author Luis Vasquez
 *
-* @date 02/06/2013
+* @date 07/07/2013
 */
 
 
@@ -34,6 +34,8 @@ private slots:
     void on_acerca_clicked();
 
     void on_pushButton_clicked();
+
+    void on_salir_clicked();
 
 private:
     Ui::VentanaPrincipal *ui;

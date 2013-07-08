@@ -39,3 +39,8 @@ void VentanaPrincipal::on_pushButton_clicked()
     close();
     r->show();
 }
+
+void VentanaPrincipal::on_salir_clicked()
+{
+    this->close();
+}

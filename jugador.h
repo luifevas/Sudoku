@@ -4,7 +4,7 @@
 * @author Luis Caviedes
 * @author Luis Vasquez
 *
-* @date 02/06/2013
+* @date 07/07/2013
 */
 
 
@@ -18,7 +18,7 @@ public:
     * Jugador constructor de la clase.
     * @param n variable de tipo QString que representa el nombre del jugador.
     * @param p variable de tipo int que representa el puntaje obtenido por el jugador.
-    * @date 02/06/2013
+    * @date 07/07/2013
     */
     Jugador(QString n, int p);
     /**

@@ -4,7 +4,7 @@
 * @author Luis Caviedes
 * @author Luis Vasquez
 *
-* @date 02/06/2013
+* @date 07/07/2013
 */
 
 
@@ -41,6 +41,9 @@ public:
     */
     QList<Jugador> ordenarRanking(QList<Jugador> ranking);
     ~Ranking();
+
+private slots:
+    void on_atras_clicked();
 
 private:
     Ui::Ranking *ui;

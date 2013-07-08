@@ -299,10 +299,15 @@ void sudoku::on_validar_clicked()
     if (verificarSudoku(matriz)==0){
         QMessageBox::information(this,"Felicitaciones!","Ha terminado este sudoku!");
         crono->stop();
+        this->close();
         int p1=crono->timeValue->second();
         int p2=crono->timeValue->minute();
         p2=p2*60;
-        guardarRanking(p1+p2);
+        if(cheat==false){
+        guardarRanking(p1+p2);}
+        else{
+            QMessageBox::information(this,"Aviso","No pudo ingresar al ranking");
+        }
     }else{
          QMessageBox::warning(this,"Lo siento","Hay errores en este sudoku");
     }
@@ -329,6 +334,7 @@ void sudoku:: guardarPartida(){
 }
 
 void sudoku:: cargarPartida(){
+
     int k=0;
     QFile file ("guardar.txt");
     file.open(QIODevice::ReadOnly);
@@ -452,6 +458,7 @@ void sudoku:: pistaJugador(){
             }
         }
     }
+    if( posX.size()!=0){
     random = qrand()%(posX.size());
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
@@ -460,6 +467,7 @@ void sudoku:: pistaJugador(){
             }
             k++;
         }
+    }
     }
 }
 
@@ -519,6 +527,7 @@ void sudoku::on_pushButton_clicked()
 
 void sudoku::on_pista_clicked()
 {
+    cheat=true;
     pistaJugador();
 }
 
@@ -590,7 +599,7 @@ int sudoku::decode(QString codigo){
 }
 
 void sudoku::on_cargar_clicked()
-{
+{   cheat=true;
     for(int i=0;i<81;i++){
         cuadros[i]->setEnabled(true);
     }
@@ -601,6 +610,7 @@ void sudoku::on_cargar_clicked()
 
 void sudoku::on_invalido_toggled(bool checked)
 {
+    cheat=true;
     if(checked){
      jugadasInvalidas();
 }
@@ -616,6 +626,7 @@ void sudoku::on_invalido_toggled(bool checked)
 
 void sudoku::on_incorrecto_toggled(bool checked)
 {
+    cheat=true;
     if(checked){
      jugadasIncorrectas();
 }

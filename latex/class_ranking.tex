@@ -1,0 +1,59 @@
+\hypertarget{class_ranking}{\section{Ranking Class Reference}
+\label{class_ranking}\index{Ranking@{Ranking}}
+}
+Inheritance diagram for Ranking\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ranking}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_ranking_a01f35fc321e4a359844411a3e4a20ba6}{{\bfseries Ranking} (Q\-Widget $\ast$parent=0)}\label{class_ranking_a01f35fc321e4a359844411a3e4a20ba6}
+
+\item 
+Q\-List$<$ \hyperlink{class_jugador}{Jugador} $>$ \hyperlink{class_ranking_a80088e847fbed9d724e03151da18d7b0}{cargar\-Ranking} ()
+\item 
+Q\-List$<$ \hyperlink{class_jugador}{Jugador} $>$ \hyperlink{class_ranking_a29e0de24fc7bd833d808e707b3979b3e}{ordenar\-Ranking} (Q\-List$<$ \hyperlink{class_jugador}{Jugador} $>$ ranking)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_ranking_a80088e847fbed9d724e03151da18d7b0}{\index{Ranking@{Ranking}!cargar\-Ranking@{cargar\-Ranking}}
+\index{cargar\-Ranking@{cargar\-Ranking}!Ranking@{Ranking}}
+\subsubsection[{cargar\-Ranking}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Jugador} $>$ Ranking\-::cargar\-Ranking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_ranking_a80088e847fbed9d724e03151da18d7b0}
+\hyperlink{class_ranking_a80088e847fbed9d724e03151da18d7b0}{cargar\-Ranking()} permite cargar los elementos que se encuentran almacenado en el archivo de texto ranking.\-txt una vez cargados los elementos se los almacena en un Q\-List$<$\-Jugador$>$ el cual se lo va a retornar. \begin{DoxyReturn}{Returns}
+un Q\-List$<$\-Jugador$>$ con los datos de todos los jugadores que han terminado el juego con sus respectivos tiempos. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+\hypertarget{class_ranking_a29e0de24fc7bd833d808e707b3979b3e}{\index{Ranking@{Ranking}!ordenar\-Ranking@{ordenar\-Ranking}}
+\index{ordenar\-Ranking@{ordenar\-Ranking}!Ranking@{Ranking}}
+\subsubsection[{ordenar\-Ranking}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Jugador} $>$ Ranking\-::ordenar\-Ranking (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ {\bf Jugador} $>$}]{ranking}
+\end{DoxyParamCaption}
+)}}\label{class_ranking_a29e0de24fc7bd833d808e707b3979b3e}
+\hyperlink{class_ranking_a29e0de24fc7bd833d808e707b3979b3e}{ordenar\-Ranking()} permite ordenar de los elementos de la lista de manera ascedente tomando como referencia de comparación el tiempo que se tomo en finalizar el juego. 
+\begin{DoxyParams}{Parameters}
+{\em una} & variable de tipo Q\-List$<$\-Jugador$>$ donde se encuentran los jugadores obtenidos del archivo ranking.\-txt. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un Q\-List$<$\-Jugador$>$ con los datos ordenado de manera ascendente. 
+\end{DoxyReturn}
+\begin{DoxyDate}{Date}
+07/07/2013 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ranking_8h}{ranking.\-h}\item 
+ranking.\-cpp\end{DoxyCompactItemize}

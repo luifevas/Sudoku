@@ -2,6 +2,7 @@
 #include "ui_ranking.h"
 #include <QFile>
 #include <QTextStream>
+#include "ventanaprincipal.h"
 
 Ranking::Ranking(QWidget *parent) :
     QDialog(parent),
@@ -64,3 +65,10 @@ QList<Jugador> Ranking:: ordenarRanking(QList<Jugador> ranking){
     return ordenado;
 }
 
+
+void Ranking::on_atras_clicked()
+{
+    VentanaPrincipal *vp = new VentanaPrincipal();
+    this->close();
+    vp->show();
+}

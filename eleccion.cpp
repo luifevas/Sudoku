@@ -1,6 +1,7 @@
 #include "eleccion.h"
 #include "ui_eleccion.h"
 #include "sudoku.h"
+#include "ventanaprincipal.h"
 
 eleccion::eleccion(QWidget *parent) :
     QDialog(parent),
@@ -39,4 +40,11 @@ void eleccion::on_empezar_clicked()
 void eleccion::on_nombre_textEdited(const QString &arg1)
 {
 
+}
+
+void eleccion::on_pushButton_clicked()
+{
+    this->close();
+    VentanaPrincipal *vp= new VentanaPrincipal();
+    vp->show();
 }
