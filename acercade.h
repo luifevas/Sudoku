@@ -1,3 +1,13 @@
+/**
+* @file acercade.h
+* @brief contiene una descripcion sobre los creadores del juego.
+* @author Luis Caviedes
+* @author Luis Vasquez
+*
+* @date 02/06/2013
+*/
+
+
 #ifndef ACERCADE_H
 #define ACERCADE_H
 

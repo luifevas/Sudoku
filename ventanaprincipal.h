@@ -1,3 +1,13 @@
+/**
+* @file ventanaprincipal.h
+* @brief ventana principal del juego Sudoku.
+* @author Luis Caviedes
+* @author Luis Vasquez
+*
+* @date 02/06/2013
+*/
+
+
 #ifndef VENTANAPRINCIPAL_H
 #define VENTANAPRINCIPAL_H
 

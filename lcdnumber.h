@@ -1,3 +1,13 @@
+/**
+* @file lcdnumber.h
+* @brief contiene la definicion del cronometro utilizado en la interfaz del sudoku.
+* @author Luis Caviedes
+* @author Luis Vasquez
+*
+* @date 02/06/2013
+*/
+
+
 #ifndef LCDNUMBER_H
 #define LCDNUMBER_H
 #include <QLCDNumber>

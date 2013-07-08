@@ -1,3 +1,13 @@
+/**
+* @file eleccion.h
+* @brief Este archivo contiene la definicion de los slots para el comienzo del juego.
+* @author Luis Caviedes
+* @author Luis Vasquez
+*
+* @date 02/06/2013
+*/
+
+
 #ifndef ELECCION_H
 #define ELECCION_H
 
