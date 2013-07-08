@@ -14,12 +14,14 @@ sudoku::sudoku(QWidget *parent,int dificultad,QString nomJugador) :
     QMainWindow(parent),
     ui(new Ui::sudoku)
 {
+    nombre=nomJugador;
     ui->setupUi(this);
     llenarsudoku(dificultad,nomJugador);
 
-   LCDNumber *number = new LCDNumber(0,0);
-   ui->tlayout->addWidget(number);
-    number->start();
+   crono = new LCDNumber(0,0);
+   ui->tlayout->addWidget(crono);
+    crono->start();
+
 }
 
 sudoku::~sudoku()
@@ -314,32 +316,26 @@ void sudoku:: colocarPistas(int matriz[9][9], int matrizSudoku[9][9], int numPis
 
 void sudoku::on_validar_clicked()
 {
-
-    int matriz [9][9];
+   int matriz [9][9];
     int k=0;
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             matriz[i][j]= cuadros[k]->text().toInt();
             k++;
-
-
         }
-
-
     }
-
-
-
-
     if (verificarSudoku(matriz)==0){
         QMessageBox::information(this,"Felicitaciones!","Ha terminado este sudoku!");
-       this->close();
+        crono->stop();
+        int p1=crono->timeValue->second();
+        int p2=crono->timeValue->minute();
+        p2=p2*60;
+        guardarRanking(p1+p2);
+
 
     }else{
          QMessageBox::warning(this,"Lo siento","Hay errores en este sudoku");
     }
-
-
 }
 
 void sudoku:: guardarPartida(){
@@ -743,6 +739,45 @@ void sudoku::on_incorrecto_toggled(bool checked)
     }
 
 
+
+}
+
+QList<Jugador> sudoku:: cargarRanking(){
+    QList<Jugador> ranking;
+
+    QFile file ("ranking.txt");
+    file.open(QIODevice::ReadOnly);
+    QTextStream in(&file);
+
+    while(!in.atEnd()){
+        QString linea= in.readLine();
+        Jugador *tmp= new Jugador(linea.section(',',0,0),linea.section(',',1,1).toInt());
+        ranking.append(*tmp);
+
+    }
+
+
+
+    return ranking;
+}
+void sudoku::guardarRanking(int puntaje){
+    QList<Jugador> ranking=cargarRanking();
+    Jugador *tmp=new Jugador(nombre,puntaje);
+    ranking.append(*tmp);
+    QFile file ("ranking.txt");
+    file.open(QIODevice::WriteOnly);
+    QTextStream out(&file);
+
+    for(int i=0; i<ranking.size();i++){
+       Jugador j=ranking.at(i);
+       QString str1=j.getNombre();
+       QString str2= QString::number(j.getPuntaje());
+       str1.append(',');
+       str1.append(str2);
+       out<<str1;
+       out << "\n";
+    }
+    file.close();
 
 }
 

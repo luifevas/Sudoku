@@ -9,6 +9,7 @@
 #include <string>
 #include "lcdnumber.h"
 #include <QString>
+#include "jugador.h"
 
 namespace Ui {
 class sudoku;
@@ -49,6 +50,8 @@ public:
     void guardarSolucion();
     void cargarOriginal();
     void guardarOriginal();
+    QList<Jugador> cargarRanking();
+    void guardarRanking(int puntaje);
 private slots:
     void on_validar_clicked();
 
@@ -67,6 +70,8 @@ private:
     QLineEdit *cuadros[81];
     QList<int> posibilidades;
     QFile guardar;
+    LCDNumber *crono;
+    QString nombre;
 
 };
 
