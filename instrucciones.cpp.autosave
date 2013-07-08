@@ -1,0 +1,21 @@
+#include "instrucciones.h"
+#include "ui_instrucciones.h"
+#include "ventanaprincipal.h"
+
+instrucciones::instrucciones(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::instrucciones)
+{
+    ui->setupUi(this);
+}
+
+instrucciones::~instrucciones()
+{
+    delete ui;
+}
+
+void instrucciones::on_pushButton_clicked()
+{
+    VentanaPrincipal *vp= new VentanaPrincipal();
+    vp->show();
+}
